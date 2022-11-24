@@ -1,3 +1,5 @@
+# Crawl site recursively using requests_html
+
 from requests_html import HTMLSession 
 
 
