@@ -16,18 +16,19 @@ def save(site_root, html, fname):
     f.writelines(html)
     f.close()
 
-def scrape( url=None):
-    print('url:', url)
-    site_root = url[url.find('//')+2:url.rfind('/')]
-    print('site_root:', site_root)
-    session = HTMLSession()
-    r = session.get(url)
+def get_fname(r, url):
     fname = ''
     if "Content-Disposition" in r.headers.keys():
         fname = re.findall("filename=(.+)", r.headers["Content-Disposition"])[0]
     else:
         fname = url.split("/")[-1]
-    print('fname:', fname)
+    return fname
+
+def scrape( url=None):
+    site_root = url[url.find('//')+2:url.rfind('/')]
+    session = HTMLSession()
+    r = session.get(url)
+    fname = get_fname(r, url)
     save(site_root, r.html.html, fname)
     [scrape(url=link) for link in sorted(r.html.absolute_links) if url in link and link != url]
 
