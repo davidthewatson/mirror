@@ -1,6 +1,6 @@
 # Mirror Site using Reitz requests-html
 
-I've been working on web scraping for decades. Most of my work was with scrapy with the frontier managed on a bespoke combination of postgresql and RFQ. I still think that backend is useful for managing crawls where the frontier is large but for single page crawls or mirrors, this is what I use.
+I've been working on web scraping for decades. Most of my work was with scrapy with the frontier managed on a bespoke combination of postgresql and RQ. I still think that backend is useful for managing crawls where the frontier is large but for single page crawls or mirrors, this is what I use.
 
 ## INSTALL
 
