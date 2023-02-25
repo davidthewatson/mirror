@@ -8,13 +8,14 @@ this is what I use.
 
 ## INSTALL
 
-gh repo clone davidthewatson/mirror
-cd mirror/
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
 
+    gh repo clone davidthewatson/mirror
+    cd mirror/
+    python -m venv .venv
+    source .venv/bin/activate
+    python -m pip install --upgrade pip
+    python -m pip install -r requirements.txt
+    
 ## RUN
 
     python mirror.py http://localhost:8000/
